@@ -3,7 +3,7 @@
 Веб-система регистраций отклонений показаний датчиков от утвержденных технологических карт.
 Описание: веб-интерфейс позволяет добавлять/изменять/удалять технологические ограничения для датчиков желаемых участков производства, а также вести запись отклонений с возможностью просмотра графиков показаний по интересующему периоду выхода за ограничения.
 
-<img src="https://github.com/vladconq/Fullstack-Monitoring-System/blob/master/Screen.png" width="850">
+<img src="https://github.com/vladconq/Fullstack-Monitoring-System/blob/master/Screen.png" width="750">
 
 Бэкенд реализован через Django Rest Framework. Для запуска необходимо зайти в папку backend и прописать команду в терминале: python manage.py runserver
 
