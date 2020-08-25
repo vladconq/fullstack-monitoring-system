@@ -25,10 +25,10 @@ document.getElementById('newLimitation').addEventListener('submit', function (e)
 
     let [url, method, operation] = ['', '', document.getElementById("submit").innerText];
     if (operation === "Добавить") {
-        url = 'https://rusagro-api.azurewebsites.net/api/limitation-create/';
+        url = 'http://127.0.0.1:8000/api/limitation-create/';
         method = 'POST';
     } else if (operation === "Изменить") {
-        url = 'https://rusagro-api.azurewebsites.net/api/limitation-update/' + $("#id_sautcom").val();
+        url = 'http://127.0.0.1:8000/api/limitation-update/' + $("#id_sautcom").val();
         method = 'PUT';
 
         document.getElementById("submit").innerText = "Добавить";
@@ -49,8 +49,8 @@ document.getElementById('newLimitation').addEventListener('submit', function (e)
 });
 
 function getLimitations() {
-    console.log('https://rusagro-api.azurewebsites.net/api/limitations-list/' + map_with_backend[$("#type_of_technological_section").val()])
-    fetch('https://rusagro-api.azurewebsites.net/api/limitations-list/' + map_with_backend[$("#type_of_technological_section").val()])
+    console.log('http://127.0.0.1:8000/api/limitations-list/' + map_with_backend[$("#type_of_technological_section").val()])
+    fetch('http://127.0.0.1:8000/api/limitations-list/' + map_with_backend[$("#type_of_technological_section").val()])
         .then(function (response) {
             return response.json()
         })
@@ -129,7 +129,7 @@ $("#cancel").click(function () {
 
 function onDelete(td) {
     const id_sautcom = td.parentElement.parentElement.cells[0].innerHTML;
-    const url = 'https://rusagro-api.azurewebsites.net/api/limitation-delete/' + id_sautcom;
+    const url = 'http://127.0.0.1:8000/api/limitation-delete/' + id_sautcom;
 
     fetch(url, {
         method: 'DELETE',
