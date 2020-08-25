@@ -12,7 +12,8 @@ saturation (Сатурация)
 filtration (Фильтрация)
 pulp (ЖСО)
 2. POST - http://127.0.0.1:8000/api/limitation-create/ - запрос создает новое технологическое ограничение. Структура тела запроса при этом выглядит следующим образом:
-```{
+```
+{
     "id_sautcom": "",
     "type_of_technological_section": "",
     "description": "",
