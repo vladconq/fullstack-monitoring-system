@@ -1,0 +1,82 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-block {
+    color: white;
+    background-color: #17a2b8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.table-header {
+    font-weight: normal;
+    color: white;
+    background-color: #17a2b8;
+}
+
+.far.fa-edit {
+    color: steelblue;
+}
+
+.far.fa-trash-alt {
+    color: crimson;
+}
+
+th {
+    font-weight: normal;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 2px;
+}
+
+thead th {
+    background-color: #17a2b8;
+    color: white;
+}
+
+tbody td {
+    background-color: #EEEEEE;
+}
+
+tr td:first-child,
+tr th:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+tr td:last-child,
+tr th:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.form-group.required .control-label:after {
+    content: "*";
+    color: crimson;
+}
+
+td {
+    font-size: 14px;
+    border-right: 1px solid #DFDFDF;
+}
+
+.hide {
+    display: none;
+}
+
+#header {
+    background-color: #17a2b8 !important;
+}
+
+p  {
+    color: white;
+}
+
+
