@@ -28,13 +28,13 @@ document.getElementById('newLimitation').addEventListener('submit', function (e)
         url = 'http://127.0.0.1:8000/api/limitation-create/';
         method = 'POST';
     } else if (operation === "Изменить") {
-        url = 'http://127.0.0.1:8000/api/limitation-update/' + $("#id_sautcom").val();
+        url = 'http://127.0.0.1:8000/api/limitation-update/' + $("#id_sensor").val();
         method = 'PUT';
 
         document.getElementById("submit").innerText = "Добавить";
         $("#cancel").addClass("hide");
 
-        document.getElementById("id_sautcom").removeAttribute('readonly')
+        document.getElementById("id_sensor").removeAttribute('readonly')
     }
 
     fetch(url, {
@@ -74,7 +74,7 @@ function buildTable(limitations) {
         cell7 = newRow.insertCell(6);
         cell8 = newRow.insertCell(7);
         cell9 = newRow.insertCell(8);
-        cell1.innerHTML = limitation.id_sautcom;
+        cell1.innerHTML = limitation.id_sensor;
         cell2.innerHTML = limitation.description;
         cell3.innerHTML = limitation.min_limit;
         cell4.innerHTML = limitation.max_limit;
@@ -94,7 +94,7 @@ function buildTable(limitations) {
 }
 
 function resetForm() {
-    document.getElementById("id_sautcom").value = "";
+    document.getElementById("id_sensor").value = "";
     document.getElementById("description").value = "";
     document.getElementById("min_limit").value = "";
     document.getElementById("max_limit").value = "";
@@ -106,7 +106,7 @@ function onEdit(td) {
     $("#submit").text('Изменить');
     $("#cancel").removeClass("hide");
 
-    document.getElementById("id_sautcom").value = td.parentElement.parentElement.cells[0].innerHTML;
+    document.getElementById("id_sensor").value = td.parentElement.parentElement.cells[0].innerHTML;
     document.getElementById("description").value = td.parentElement.parentElement.cells[1].innerHTML;
     document.getElementById("min_limit").value = td.parentElement.parentElement.cells[2].innerHTML;
     document.getElementById("max_limit").value = td.parentElement.parentElement.cells[3].innerHTML;
@@ -114,7 +114,7 @@ function onEdit(td) {
     document.getElementById("date_begin").value = td.parentElement.parentElement.cells[5].innerHTML;
     document.getElementById("date_end").value = td.parentElement.parentElement.cells[6].innerHTML;
 
-    document.getElementById("id_sautcom").setAttribute('readonly', 'true')
+    document.getElementById("id_sensor").setAttribute('readonly', 'true')
 }
 
 $("#cancel").click(function () {
@@ -123,13 +123,13 @@ $("#cancel").click(function () {
     $("#submit").removeClass("hide");
     $("#change").addClass("hide");
     $("#cancel").addClass("hide");
-    document.getElementById("id_sautcom").removeAttribute('readonly')
+    document.getElementById("id_sensor").removeAttribute('readonly')
 })
 
 
 function onDelete(td) {
-    const id_sautcom = td.parentElement.parentElement.cells[0].innerHTML;
-    const url = 'http://127.0.0.1:8000/api/limitation-delete/' + id_sautcom;
+    const id_sensor = td.parentElement.parentElement.cells[0].innerHTML;
+    const url = 'http://127.0.0.1:8000/api/limitation-delete/' + id_sensor;
 
     fetch(url, {
         method: 'DELETE',

@@ -12,8 +12,8 @@ def get_existing_limitations(request, type_of_technological_section):
 
 
 @api_view(['PUT'])
-def update_limitation(request, id_sautcom):
-    limitation = Limitation.objects.get(id_sautcom=id_sautcom)
+def update_limitation(request, id_sensor):
+    limitation = Limitation.objects.get(id_sensor=id_sensor)
     serializer = LimitationSerializer(instance=limitation, data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -29,7 +29,7 @@ def create_limitation(request):
 
 
 @api_view(['DELETE'])
-def delete_limitation(request, id_sautcom):
-    limitation = Limitation.objects.get(id_sautcom=id_sautcom)
+def delete_limitation(request, id_sensor):
+    limitation = Limitation.objects.get(id_sensor=id_sensor)
     limitation.delete()
     return Response('Item deleted')
